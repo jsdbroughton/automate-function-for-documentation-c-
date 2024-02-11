@@ -8,7 +8,7 @@ using System.ComponentModel;
 /// are valid and match the required schema.
 struct FunctionInputs
 {
-
+    public string SpeckleTypeToCount;
     public string? OptionalText; // A non required field
 
     public int? ExpectedMinimumValue {get; set;}
