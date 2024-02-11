@@ -12,10 +12,11 @@ struct FunctionInputs
     public string SpeckleTypeToCount {get; set;}
 
     [Secret]
+    [Required(AllowEmptyStrings = true)]
     public string WhisperMessage;
 
-    [Editable(false)]
-    public string ReadOnly { get; private set; } // Example of how to make a property read-only.
+    [Editable(allowEdit:false)] // Example of how to make a property read-only.
+    public string ReadOnly { get; set; } 
 
     [DisplayName("Specific Input Title")]
     [Description("This is a description for the example input.")]
