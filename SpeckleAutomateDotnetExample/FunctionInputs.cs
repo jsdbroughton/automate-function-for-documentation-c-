@@ -13,8 +13,12 @@ struct FunctionInputs
 
     public int? ExpectedMinimumValue {get; set;}
 
+    [Range(0.0, 100.0)]
+  	public double ScalarValue; // A float variable between 0 and 100
+
     public FunctionInputs()
     {
+        ScalarValue = 3.5;
         SpeckleTypeToCount = "";
         OptionalText = null; // Explicitly setting the default, though this is optional since it's already the default for nullable reference types
         ExpectedMinimumValue = 10;
