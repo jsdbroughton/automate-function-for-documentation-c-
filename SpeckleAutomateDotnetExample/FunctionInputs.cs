@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel
+using System.ComponentModel;
 
 /// <summary>
 /// This class describes the user specified variables that the function wants to work with.
@@ -8,19 +8,18 @@ using System.ComponentModel
 /// are valid and match the required schema.
 struct FunctionInputs
 {
-  [Required]
-  public string SpeckleTypeToCount;
+    [Required]
+    public string SpeckleTypeToCount {get; set;}
 
-  [Secret]
-  public string WhisperMessage;
+    [Secret]
+    public string WhisperMessage;
 
-  [Editable(false)]
-	public string ReadOnly; // A disabled text input field
+    [Editable(false)]
+    public string ReadOnly { get; private set; } // Example of how to make a property read-only.
 
-	[DisplayName("Specific Input Title")]
-	[Description("This is a description for the example input.")]
-	public string DecoratedInput {get; set;} // A range of Attributes applied.
-
+    [DisplayName("Specific Input Title")]
+    [Description("This is a description for the example input.")]
+    public string DecoratedInput { get; set; } // Attributes applied here are valid since this is a property.
 }
 
 
