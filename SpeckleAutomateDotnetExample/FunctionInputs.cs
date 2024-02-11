@@ -11,6 +11,7 @@ struct FunctionInputs
     [Required]
     public string SpeckleTypeToCount {get; set;}
 
+ 
     [Secret]
     [Required(AllowEmptyStrings = true)]
     public string WhisperMessage;
@@ -21,6 +22,9 @@ struct FunctionInputs
     [DisplayName("Specific Input Title")]
     [Description("This is a description for the example input.")]
     public string DecoratedInput { get; set; } // Attributes applied here are valid since this is a property.
+
+    public int? ExpectedMinimumValue {get; set;} = 10; // A Default Value
+
 }
 
 
