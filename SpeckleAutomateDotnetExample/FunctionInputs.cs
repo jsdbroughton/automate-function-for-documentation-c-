@@ -15,6 +15,7 @@ struct FunctionInputs
 
     public FunctionInputs()
     {
+        SpeckleTypeToCount = "";
         OptionalText = null; // Explicitly setting the default, though this is optional since it's already the default for nullable reference types
         ExpectedMinimumValue = 10;
     }
