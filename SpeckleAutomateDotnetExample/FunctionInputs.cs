@@ -9,4 +9,15 @@ struct FunctionInputs
 {
   [Required]
   public string SpeckleTypeToCount;
+
+  [Secret]
+  public string WhisperMessage;
+
+}
+
+
+[AttributeUsage(AttributeTargets.Field)]
+public class SecretAttribute : Attribute
+{
+    // This is a marker attribute and doesn't need any additional logic
 }
