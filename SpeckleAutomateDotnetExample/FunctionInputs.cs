@@ -8,22 +8,16 @@ using System.ComponentModel;
 /// are valid and match the required schema.
 struct FunctionInputs
 {
-    [Required]
-    public string SpeckleTypeToCount {get; set;}
 
- 
-    [Secret]
-    [Required(AllowEmptyStrings = true)]
-    public string WhisperMessage;
+    public string? OptionalText; // A non required field
 
-    [Editable(allowEdit:false)] // Example of how to make a property read-only.
-    public string ReadOnly { get; set; } 
+    public int? ExpectedMinimumValue {get; set;}
 
-    [DisplayName("Specific Input Title")]
-    [Description("This is a description for the example input.")]
-    public string DecoratedInput { get; set; } // Attributes applied here are valid since this is a property.
-
-    public int? ExpectedMinimumValue {get; set;} = 10; // A Default Value
+    public FunctionInputs()
+    {
+        OptionalText = null; // Explicitly setting the default, though this is optional since it's already the default for nullable reference types
+        ExpectedMinimumValue = 10;
+    }
 
 }
 
